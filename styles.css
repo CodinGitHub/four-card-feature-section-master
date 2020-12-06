@@ -14,8 +14,8 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     color: var(--Very_Dark_Blue);
-    box-sizing: border-box;
     background-color: var(--Very_Light_Gray);
+    box-sizing: border-box;
 }
 .container{
     margin: 90px 30px;
@@ -26,36 +26,39 @@ header{
 }
 header h1{
     font-weight: 200;
-    font-size: 1.7em;
+    font-size: 1.6em;
     margin: 0;
     animation: leftright 1000ms;
 }
 header h2{
     font-weight: 600;
-    font-size: 1.7em;
+    font-size: 1.6em;
     margin: 0;
     animation: rightleft 1000ms;
 }
 header p{
+    font-size: 1.05em;
     color: var(--Grayish_Blue);
     margin-bottom: 70px;
-    font-size: 1.05em;
     animation: updown 1000ms;
 }
 /* ---------------- CardsContainer ---------------- */
 .cardscontainer{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     animation: downup 1000ms;
 }
 .cards{
-    margin: 0 auto;
-    min-width: 315px;
-    min-height: 225px;
+    border-radius: 8px;/**/
+    background-color: var(--Very_Light_Gray);/**/
+    box-shadow: 3px 10px 10px var(--Grayish_Blue);/**/
+    overflow: hidden;/**/
+    min-width: 310px;
+    height: 222px;
     max-width: 500px;
-    border-radius: 8px;
-    background-color: var(--Very_Light_Gray);
-    box-shadow: 3px 10px 10px var(--Grayish_Blue);
-    margin-bottom:30px;
-    overflow: hidden;
+    margin-bottom: 30px;
 }
 .card1 .line{
     background-color: var(--Cyan);
@@ -90,6 +93,7 @@ header p{
 /* -------------------- Footer -------------------- */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
 /* -------------------- (600px) -------------------- */
 @media only screen and (min-width: 600px){
     header{
@@ -106,23 +110,16 @@ header p{
 /* -------------------- (780px) -------------------- */
 @media only screen and (min-width: 780px){
     .container{
-        max-width: 1110px;
+        max-width: 1200px;
         margin: 90px auto 20px;
         padding: 0 30px;
     }
-    
     .cardscontainer{
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 30px;
-        /* justify-items: center; */
         max-width: 900px;
         margin: 0 auto;
-    }
-    .cards{
-        max-width: 435px;
-        height: 254px; 
-        
     }
     .twocards{
         grid-column: 2 / 3;
@@ -133,30 +130,30 @@ header p{
 @media only screen and (min-width: 1175px){
     .cardscontainer{
         display: flex;
-        /* justify-content: space-between; */
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        max-width: 1110px;
+        max-width: 1200px;
     }
-    .card2_3{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid blue;
+    .cards{
+        width: 355px;
+        height: 254px;    
     }
 }
 /* ---------------- Animations ---------------- */
 @keyframes updown{
     0%{transform: translateY(-500px);}
-    100%{transform: translateY(0px)}
+    100%{transform: translateY(0px);}
 }
 @keyframes leftright{
     0%{transform: translateX(-500px);}
-    100%{transform: translateX(0px)}
+    100%{transform: translateX(0px);}
 }
 @keyframes rightleft{
     0%{transform: translateX(500px);}
-    100%{transform: translateX(0px)}
-}
+    100%{transform: translateX(0px);}
+} 
 @keyframes downup{
     0%{transform: translateY(500px);}
-    100%{transform: translateY(0px)}
+    100%{transform: translateY(0px);}
 }
